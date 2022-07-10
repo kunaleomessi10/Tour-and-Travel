@@ -176,6 +176,7 @@ def payment():
             payable_amount = request.form['payable_amount']
             payment_method = request.form['payment_method']
             payment_status = request.form['payment_status']
+            change_booking_status(int(booking_id),payment_status)
             msg = add_payment(customer_id=customer_id, booking_id=booking_id,
                               payment_date=payment_date,
                               payable_amount=payable_amount,
